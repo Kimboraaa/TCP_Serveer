@@ -58,9 +58,10 @@ public class Main extends Application {
 			try {
 				InputStream in = socket.getInputStream();//서버로부터 메세지 전달받음
 				byte[] buffer = new byte[512];//512바이트만큼 끊어서 버퍼에 담아 전달
-				int length = in.read(buffer);//실제로 입력받음
-				if(length == -1) throw new IOException();//서버로부터 내용을 입력받는 도중 오류가 발생하면 동작
-				String message = new String(buffer, 0, length, "UTF-8");//실제로 버퍼에 있는 정보를 화면에 출력
+				int a = System.in.read(buffer);
+				System.out.print(a);//실제로 입력받음
+				if(a == -1) throw new IOException();//서버로부터 내용을 입력받는 도중 오류가 발생하면 동작
+				String message = new String(buffer, 0, a, "UTF-8");//실제로 버퍼에 있는 정보를 화면에 출력
 				Platform.runLater(()->{
 					textArea.appendText(message);//화면에 메세지 출력
 				});

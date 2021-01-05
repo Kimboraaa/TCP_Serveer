@@ -30,6 +30,7 @@ public class Main extends Application {
 	 
 	//서버를 구동시켜서 클라이언트의 연결을 기다리는 메소드 - 1 
 	public void startServer(String IP, int port) {
+		
 		try {
 			serverSocket = new ServerSocket();//서버가 실행이 되면 소켓생성
 			serverSocket.bind(new InetSocketAddress(IP, port));//서버컴퓨터가 자신의 IP,port로 특정한 클라이언트의 접속을 기다리게
